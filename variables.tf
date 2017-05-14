@@ -20,9 +20,9 @@ variable "instance_name" {
 }
 
 variable "instance_type" {
-	description = "Instance type of the application server"
-	type = "string"
-	default = "t2.micro"
+  description = "Instance type of the application server"
+  type = "string"
+  default = "t2.micro"
 }
 
 variable "ami_id" {
