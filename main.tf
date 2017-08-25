@@ -11,8 +11,11 @@ resource "aws_instance" "ec2_instance" {
   vpc_security_group_ids = ["${aws_security_group.fresca.id}"]
   key_name = "fresca"
 
-  # subnet_id = "${var.subnet_id}"
-  # user_data = "${file(var.user_data)}"
+  root_block_device = {
+    volume_type = "${var.root_volume_type}"
+    volume_size = "${var.root_volume_size}"
+    delete_on_termination = true
+  }
 
   tags {
     created_by = "${lookup(var.tags,"created_by")}"

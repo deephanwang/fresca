@@ -31,6 +31,18 @@ variable "ami_id" {
   default = "ami-a8d2d7ce"
 }
 
+variable "root_volume_size" {
+  description = "Size in gigabytes (GBs) of the root EBS volume"
+  type = "string"
+  default = "10"
+}
+
+variable "root_volume_type" {
+  description = "Size in gigabytes (GBs) of the root EBS volume"
+  type = "string"
+  default = "gp2"
+}
+
 variable "number_of_instances" {
   description = "number of instances to make"
   default = 1
@@ -39,13 +51,5 @@ variable "number_of_instances" {
 variable "tags" {
   default = {
     created_by = "terraform"
- }
+  }
 }
-
-# variable "subnet_id" {
-#   description = "The VPC subnet the instance(s) will go in"
-# }
-
-# variable "user_data" {
-#   description = "The path to a file with user_data for the instances"
-# }
